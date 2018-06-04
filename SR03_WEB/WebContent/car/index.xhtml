@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title><h:outputText value="Lecture WebService" /></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap/jquery.mmenu.all.css" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap/fonts.css" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap/mystyle.css" />
+	<script src="../JS/jquery-2.2.0.min.js"></script>
+	<script src="../JS/jquery.mmenu.min.all.js"></script>
+	<script src="../JS/ent.js"></script>
+	<script src="../JS/bootstrap.min.js"></script>
+</h:head>
+
+<body id="page">
+
+	<header id="MainBar">
+		<div id="LightGreyNav">
+			<div class="container clearfix editeurBar">
+				<h:outputText value="Lecture WebService" escape="false" />
+			</div>
+		</div>
+	</header>
+
+	<main id="PageContenu" class="container" style="margin-top: 55px">
+
+		<div class="col-sm-12 LeContenu">
+			<h3>Affichage d'un exemple</h3>
+			<h:form id="data">
+				<table class="table table-striped gpaTitle chargecenter">
+				<tr>
+					<th>Couleur</th>
+					<th>ID</th>
+					<th>Prix</th>	
+				</tr>				
+				
+				<ui:repeat value="#{gestCar.carTemplate}" var="car">
+					<tr>
+						<td><h:outputText value="#{car.couleur}"/></td>
+						<td><h:outputText value="#{car.id}"/></td>
+						<td><h:outputText value="#{car.prix}"/></td>
+					</tr>	
+				</ui:repeat>	
+				</table>		
+			</h:form>	
+			
+		</div>			
+	</main>
+
+
+</body>
+</html>
